@@ -3,6 +3,8 @@ Sorts Exercise
 
 [![Join the chat at https://gitter.im/unioncollege-webtech/sorts](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/unioncollege-webtech/sorts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![Join the chat at https://gitter.im/unioncollege-webtech/sorts](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/unioncollege-webtech/sorts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 In this exercise, you are given several sets of numbers and strings.
 
     group1 = [22, 3, 23, 17, 9, 18, 14, 11, 5, 25, 15, 10, 6, 19, 21, 4, 2, 13, 7, 16, 24, 12, 20, 1, 8]
