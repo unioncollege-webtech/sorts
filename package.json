@@ -1,0 +1,27 @@
+{
+  "name": "sorts",
+  "version": "1.0.0",
+  "description": "An exercise for inspecting strings using .length and .charAt()",
+  "main": "sorts.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unioncollege-webtech/peter-piper.git"
+  },
+  "keywords": [
+    "javascript",
+    "exercise",
+    "strings"
+  ],
+  "author": "Benjamin Barber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unioncollege-webtech/peter-piper/issues"
+  },
+  "homepage": "https://github.com/unioncollege-webtech/peter-piper"
+}
