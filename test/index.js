@@ -1,30 +1,41 @@
-/* globals group1 group2 group3 */
+/* global bubbleSort, quickSort */
 var readFile = require('fs').readFile;
 var assert = require('assert');
 var exec = require('child_process').exec;
+var join = require('path').join;
 
-exec('node .', function(error, stdout, stderr) {
-    if (error) {
-        throw error;
+readFile(join(__dirname, '../sorts.js'), 'UTF-8', function(err, expected) {
+    if (err) {
+        throw err;
     }
-        readFile('./sorts.js', "utf-8", function(err, value) {
-            if (err) throw err;
 
-            eval(value);
+    eval(expected);
 
-            if(group1 != group1.sort()) 
-            {
-                assert(false, "group1 is not sorted!");
-            }
+    var unsorted = [3, 4, 1];
 
-            if(group2 != group2.sort()){
-                assert(false, "group2 is not sorted!");
+    // bubbleSort()
+    assert.equal(typeof bubbleSort, 'function', '`bubbleSort` is expected to be a function and was ' + typeof bubbleSort + '.');
+    assert.deepEqual(bubbleSort(unsorted), [1, 3, 4], 'bubbleSort() should return a sorted array.');
+    assert.deepEqual([3, 4, 1], unsorted, 'bubbleSort() should not modify the original array.');
+    console.log('bubbleSort() is working correctly!');
+
+    // quickSort()
+    assert.equal(typeof quickSort, 'function', '`quickSort` is expected to be a function and was ' + typeof quickSort + '.');
+    assert.deepEqual(quickSort(unsorted), [1, 3, 4], 'quickSort() should return a sorted array.');
+    assert.deepEqual([3, 4, 1], unsorted, 'quickSort() should not modify the original array.');
+    console.log('quickSort() is working correctly!');
+
+    // Test the expected output.
+    exec('node .', function(err, stdout, stderr) {
+        if (err) {
+            throw err;
+        }
+        readFile(join(__dirname, 'expected.txt'), 'UTF-8', function(err, expected) {
+            if (err) {
+                throw err;
             }
-            if(group3 != group3.sort()){
-                assert(false, "group3 is not sorted!");
-            }
-            console.log("All tests pass!")
+            assert.equal(stdout, expected, 'sorts.js should run each bubbleSort() and quickSort() for each provided group and log the results to the console.');
+            console.log('All tests pass!');
         });
+    });
 });
-
-
