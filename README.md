@@ -78,6 +78,7 @@ References
 ----------
 
 - [Array documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [array.slice() to clone/copy arrays ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 - [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)
 - [Quick sort](https://en.wikipedia.org/wiki/Quicksort)
 - [`string.toLowerCase()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
