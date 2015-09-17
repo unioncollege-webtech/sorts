@@ -1,7 +1,7 @@
 {
   "name": "sorts",
   "version": "1.0.0",
-  "description": "An exercise for inspecting strings using .length and .charAt()",
+  "description": "An exercise using comparison operators to sort array values.",
   "main": "sorts.js",
   "directories": {
     "test": "test"
@@ -11,17 +11,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/unioncollege-webtech/peter-piper.git"
+    "url": "https://github.com/unioncollege-webtech/sorts.git"
   },
   "keywords": [
     "javascript",
     "exercise",
-    "strings"
+    "comparison",
+    "operators",
+    "quicksort",
+    "bubblesort"
   ],
-  "author": "Benjamin Barber",
+  "author": "Keith Wade",
+  "contributors": [
+    "Colby Rodeheaver (https://github.com/crodeheaver)",
+    "Benjamin Barber (https://github.com/barberboy)"
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/unioncollege-webtech/peter-piper/issues"
+    "url": "https://github.com/unioncollege-webtech/sorts/issues"
   },
-  "homepage": "https://github.com/unioncollege-webtech/peter-piper"
+  "homepage": "https://github.com/unioncollege-webtech/sorts"
 }
