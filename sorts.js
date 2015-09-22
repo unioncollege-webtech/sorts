@@ -10,13 +10,6 @@ function bubbleSort(oldArray) {
    var arraySize = newArray.length;
    var swap;
    
-   // To convert all strings to lowercase
-   for (var j = 0; j < arraySize; j++) {
-      if (typeof newArray[j] === 'string') { 
-      newArray[j] = newArray[j].toLowerCase();
-      }
-   }
-   
    for (var i = 0; i < (arraySize - 1); i++) {
        for (var k = 0; k < (arraySize - i - 1); k++) {
            if (newArray[k] > newArray[k + 1]) {
@@ -26,7 +19,7 @@ function bubbleSort(oldArray) {
            }
        }
    }
-   console.log(newArray);
+  return newArray;
 }
 
 function swap(myArray, indexOne, indexTwo) {
@@ -39,9 +32,9 @@ function swap(myArray, indexOne, indexTwo) {
 
 function partition(myArray, left, right) {
 
-    var pivot   = myArray[Math.floor((right + left) / 2)],
-        x       = left,
-        y       = right;
+    var pivot  = myArray[Math.floor((right + left) / 2)],
+        x = left,
+        y = right;
 
 
     while (x <= y) {
@@ -67,13 +60,6 @@ function quickSort(oldArray, left, right) {
 
     var newArray = oldArray.slice();
     var index;
-    
-    // To convert all strings to lowercase
-   for (var j = 0; j < newArray.length; j++) {
-      if (typeof newArray[j] === 'string') { 
-      newArray[j] = newArray[j].toLowerCase();
-      }
-   }
 
     if (newArray.length > 1) {
 
@@ -83,21 +69,29 @@ function quickSort(oldArray, left, right) {
         index = partition(newArray, left, right);
 
         if (left < index - 1) {
-            quickSort(newArray, left, index - 1);
+            newArray = quickSort(newArray, left, index - 1);
         }
 
         if (index < right) {
-            quickSort(newArray, index, right);
+            newArray = quickSort(newArray, index, right);
         }
 
     }
-   console.log(newArray);
+   return newArray;
 }
 
-//bubbleSort(group1);
-//bubbleSort(group2);
-//bubbleSort(group3);
+/* Mr Barber's Magic
+function quickSort(array) {
+    var copy = array.slice();
+    _quickSort(copy);
+    return copy;
+}
+*/
 
-//quickSort(group1);
-//quickSort(group2);
-quickSort(group3);
+//console.log(bubbleSort(group1));
+//console.log(bubbleSort(group2));
+//console.log(bubbleSort(group3));
+
+console.log(quickSort(group1));
+//console.log(quickSort(group2));
+//console.log(quickSort(group3));
