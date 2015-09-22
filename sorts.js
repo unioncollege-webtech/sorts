@@ -26,44 +26,78 @@ function bubbleSort(oldArray) {
            }
        }
    }
-   return newArray;
+   console.log(newArray);
 }
 
+function swap(myArray, indexOne, indexTwo) {
+    
+    var holding = myArray[indexOne];
+    myArray[indexOne] = myArray[indexTwo];
+    myArray[indexTwo] = holding;
+    
+}
 
-function quickSort(originalArray) {
-   
-   var coolArray = originalArray.slice();
-   var coolSize = coolArray.length;
-   var left = [];
-   var right = [];
-   var pivot = coolArray[0];
-   
-    if (coolArray.length === 0) {
-        return [];
+function partition(myArray, left, right) {
+
+    var pivot   = myArray[Math.floor((right + left) / 2)],
+        x       = left,
+        y       = right;
+
+
+    while (x <= y) {
+
+        while (myArray[x] < pivot) {
+            x++;
+        }
+
+        while (myArray[y] > pivot) {
+            y--;
+        }
+
+        if (x <= y) {
+            swap(myArray, x, y);
+            x++;
+            y--;
+        }
     }
- 
-   // To convert all strings to lowercase
-   for (var j = 0; j < coolSize; j++) {
-      if (typeof coolArray[j] === 'string') { 
-      coolArray[j] = coolArray[j].toLowerCase();
+    return x;
+}
+
+function quickSort(oldArray, left, right) {
+
+    var newArray = oldArray.slice();
+    var index;
+    
+    // To convert all strings to lowercase
+   for (var j = 0; j < newArray.length; j++) {
+      if (typeof newArray[j] === 'string') { 
+      newArray[j] = newArray[j].toLowerCase();
       }
    }
 
-    for (var i = 1; i < coolArray.length; i++) {
-        if (coolArray[i] < pivot) {
-           left.push(coolArray[i]);
-        } else {
-           right.push(coolArray[i]);
+    if (newArray.length > 1) {
+
+        left = typeof left != "number" ? 0 : left;
+        right = typeof right != "number" ? newArray.length - 1 : right;
+
+        index = partition(newArray, left, right);
+
+        if (left < index - 1) {
+            quickSort(newArray, left, index - 1);
         }
+
+        if (index < right) {
+            quickSort(newArray, index, right);
+        }
+
     }
- 
-    return quickSort(left).concat(pivot, quickSort(right));
-}   
+   console.log(newArray);
+}
 
-console.log(bubbleSort(group1));
-console.log(bubbleSort(group2));
-console.log(bubbleSort(group3));
+//bubbleSort(group1);
+//bubbleSort(group2);
+//bubbleSort(group3);
 
-console.log(quickSort(group1));
-console.log(quickSort(group2));
-console.log(quickSort(group3));
+//quickSort(group1);
+//quickSort(group2);
+quickSort(group3);
