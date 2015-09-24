@@ -3,3 +3,30 @@ var group2 = [32, 29, 28, 47, 50, 43, 40, 45, 37, 46, 27, 49, 35, 26, 34, 44, 48
 var group3 = ['sadly', 'roast', 'Loopy', 'burger', 'gavel', 'lure', 'postpone', 'frontal', 'Gavel', 'lavender'];
 
 // Your code goes here! Hooray!
+
+function bubblesort(array){
+  for(var i=0; i < array.length-1; i++){
+      if(array[i] > array[i+1]){
+          var a = array[i];
+          array[i] = array[i+1];
+          array[i+1] = a;
+      }
+  }
+  var switched = true
+  return array;
+}
+
+
+function quicksort(array){
+    
+}
+
+
+
+console.log(bubblesort(group1));
+console.log(bubblesort(group2));
+console.log(bubblesort(group3));
+
+console.log(quicksort(group1));
+console.log(quicksort(group2));
+console.log(quicksort(group3));
