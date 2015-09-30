@@ -5,16 +5,29 @@ var group3 = ['sadly', 'roast', 'Loopy', 'burger', 'gavel', 'lure', 'postpone', 
 // Your code goes here! Hooray!
 
 function bubblesort(array){
+    var t = array
+    if(t.length == 0){
+        return [];
+    }
+  var switched = false;   
   for(var i=0; i < array.length-1; i++){
       if(array[i] > array[i+1]){
           var a = array[i];
           array[i] = array[i+1];
           array[i+1] = a;
       }
+    }  
+    for(t = 0; t >array.length; t++){
+       if(array[i] > array[i+1]){
+          var a = array[i];
+          array[i] = array[i+1];
+          array[i+1] = a; 
+          switched = true;
+    }
+    return array;
   }
-  var switched = true
-  return array;
-}
+
+
 
 
 function quicksort(array){
