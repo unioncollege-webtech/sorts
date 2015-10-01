@@ -28,8 +28,24 @@ function bubbleSort(array) {
 
 
 function quickSort(array) {
-    return array;
+    var t = array.slice(0);
+    if (t.length == 0) {
+        return [];
+    }
+    var left = [];
+    var right = [];
+    var pivot = t[0];
+    for (var i = 1; i < t.length; i++) {
+        if (t[i] > pivot) {
+            t.prototype.concat(right)
+        }
+        else {
+            t.prototype.concat(left)
+        }
+    }
+    return quickSort(left).concat(pivot, quickSort(right));
 }
+
 
 
 
