@@ -4,42 +4,39 @@ var group3 = ['sadly', 'roast', 'Loopy', 'burger', 'gavel', 'lure', 'postpone', 
 
 // Your code goes here! Hooray!
 
-function bubblesort(array){
-    var t = array
-    if(t.length == 0){
+function bubbleSort(array) {
+    var t = array.slice(0);
+    if (t.length == 0) {
         return [];
     }
-  var switched = false;   
-  for(var i=0; i < array.length-1; i++){
-      if(array[i] > array[i+1]){
-          var a = array[i];
-          array[i] = array[i+1];
-          array[i+1] = a;
-      }
-    }  
-    for(t = 0; t >array.length; t++){
-       if(array[i] > array[i+1]){
-          var a = array[i];
-          array[i] = array[i+1];
-          array[i+1] = a; 
-          switched = true;
+    var switched = true;
+    while (switched) {
+        switched = false;
+        for (var i = 0; i < t.length - 1; i++) {
+            if (t[i] > t[i + 1]) {
+                var a = t[i];
+                t[i] = t[i + 1];
+                t[i + 1] = a;
+                switched = true;
+            }
+        }
     }
-    return array;
-  }
-
-
-
-
-function quicksort(array){
-    
+    return t;
 }
 
 
 
-console.log(bubblesort(group1));
-console.log(bubblesort(group2));
-console.log(bubblesort(group3));
 
-console.log(quicksort(group1));
-console.log(quicksort(group2));
-console.log(quicksort(group3));
+function quickSort(array) {
+    return array;
+}
+
+
+
+console.log(bubbleSort(group1));
+console.log(bubbleSort(group2));
+console.log(bubbleSort(group3));
+
+console.log(quickSort(group1));
+console.log(quickSort(group2));
+console.log(quickSort(group3));
