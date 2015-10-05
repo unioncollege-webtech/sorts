@@ -37,10 +37,10 @@ function quickSort(array) {
     var pivot = t[0];
     for (var i = 1; i < t.length; i++) {
         if (t[i] > pivot) {
-            t.prototype.concat(right)
+            right.push(t[i]);
         }
         else {
-            t.prototype.concat(left)
+            left.push(t[i]);
         }
     }
     return quickSort(left).concat(pivot, quickSort(right));
