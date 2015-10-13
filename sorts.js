@@ -22,6 +22,9 @@ function bubbleSort(array) {
 
 function quickSort(array) {
     var tempArray = array.slice(0);
+    if (tempArray == 0) {
+        return []
+    }
     var pivot = tempArray[0];
     var right = [];
     var left = [];
