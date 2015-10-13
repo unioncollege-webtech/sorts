@@ -21,28 +21,27 @@ function bubbleSort(array) {
 }
 
 function quickSort(array) {
-    var pivot = array[0];
+    var tempArray = array.slice(0);
+    var pivot = tempArray[0];
     var right = [];
     var left = [];
-    while(true) {
-        left =[] -1;
-        while ([] > pivot) {
-            right = [] + 1
-        }
-    
-        while (array < pivot) {
-            if ([] < left) {
-                
-            }
+    for (var i = 1; i < tempArray.length; i++) {
+        if (tempArray[i] < pivot) {
+            left.push(tempArray[i]);
+        } else {
+            right.push(tempArray[i]);
         }
     }
-    
+    return quickSort(left).concat(pivot, quickSort(right));
 }
 
 
 
 
-console.log(bubbleSort(group1))
-console.log(group1);
-//console.log(bubbleSort(group2));
-//console.log(bubbleSort(group3));
+console.log(bubbleSort(group1));
+console.log(bubbleSort(group2));
+console.log(bubbleSort(group3));
+
+console.log(quickSort(group1));
+console.log(quickSort(group2));
+console.log(quickSort(group3));
