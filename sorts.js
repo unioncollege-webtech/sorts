@@ -3,3 +3,35 @@ var group2 = [32, 29, 28, 47, 50, 43, 40, 45, 37, 46, 27, 49, 35, 26, 34, 44, 48
 var group3 = ['sadly', 'roast', 'Loopy', 'burger', 'gavel', 'lure', 'postpone', 'frontal', 'Gavel', 'lavender'];
 
 // Your code goes here! Hooray!
+
+//function bubbleSort(array)
+//{
+//    for()
+//}
+
+function quickSort(origArray)
+{
+    var array = origArray;
+    var pivot = array.pop;
+    var smaller = [], larger = [], middle =[pivot];
+    
+    for(var i=0; i<array.length;i++)
+    {
+        var test=array.shift;
+        
+        if(test===pivot)
+        {
+            middle.push(test);
+        }
+        else if(test>pivot)
+        {
+            larger.push(test);
+        }
+        else  //lesser elements
+        {
+            smaller.push(test);
+        }
+    }
+    
+    
+}
