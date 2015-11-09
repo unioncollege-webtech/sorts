@@ -4,84 +4,47 @@ var group3 = ['sadly', 'roast', 'Loopy', 'burger', 'gavel', 'lure', 'postpone', 
 
 // Your code goes here! Hooray!
 
-// bubbleSorting the first group: group1
-function bubbleSort(group1)
+// bubbleSorting the first group: group
+function bubbleSort(array)
 {
+    var group = array.slice(0);
     var moved;
     do {
         moved = false;
-        for (var i=0; i < group1.length-1; i++) {
-            if (group1[i] > group1[i+1]) {
-                var temp = group1[i];
-                group1[i] = group1[i+1];
-                group1[i+1] = temp;
+        for (var i=0; i < group.length-1; i++) {
+            if (group[i] > group[i+1]) {
+                var temp = group[i];
+                group[i] = group[i+1];
+                group[i+1] = temp;
                 moved = true;
             }
         }
     } while (moved);
+    return group;
 }
  
-bubbleSort(group1);
-console.log(group1);
+console.log(bubbleSort(group1));
+console.log(bubbleSort(group2));
+console.log(bubbleSort(group3));
 
 
-// bubbleSorting the second group: group2
-function bubbleSort(group2)
+
+//Quicksorting group
+function quicksort(array)
 {
-    var moved;
-    do {
-        moved = false;
-        for (var i=0; i < group2.length-1; i++) {
-            if (group2[i] > group2[i+1]) {
-                var temp = group2[i];
-                group2[i] = group2[i+1];
-                group2[i+1] = temp;
-                moved = true;
-            }
-        }
-    } while (moved);
-}
- 
-bubbleSort(group2);
-console.log(group2);
-
-// bubbleSorting the third group: group3
-
-function bubbleSort(group3)
-
-{
-    var moved;
-    do {
-        moved = false;
-        for (var i=0; i < group3.length-1; i++) {
-            if (group3[i] > group3[i+1]) {
-                var temp = group3[i];
-                group3[i] = group3[i+1];
-                group3[i+1] = temp;
-                moved = true;
-            }
-        }
-    } while (moved);
-}
- 
-bubbleSort(group3);
-console.log(group3);
-
-//Quicksorting group1
-function quicksort(group1)
-{
-    if (group1.length == 0)
+    var group = array.slice(0);
+    if (group.length == 0)
         return [];
  
     var left = new Array();
     var right = new Array();
-    var pivot = group1[0];
+    var pivot = group[0];
  
-    for (var i = 1; i < group1.length; i++) {
-        if (group1[i] < pivot) {
-           left.push(group1[i]);
+    for (var i = 1; i < group.length; i++) {
+        if (group[i] < pivot) {
+           left.push(group[i]);
         } else {
-           right.push(group1[i]);
+           right.push(group[i]);
         }
     }
  
@@ -89,51 +52,5 @@ function quicksort(group1)
 }
  
 console.log(quicksort(group1));
-
-//Quicksorting group2
-function quicksort(group2)
-{
-    if (group2.length == 0)
-        return [];
- 
-    var left = new Array();
-    var right = new Array();
-    var pivot = group2[0];
- 
-    for (var i = 1; i < group2.length; i++) {
-        if (group2[i] < pivot) {
-           left.push(group2[i]);
-        } else {
-           right.push(group2[i]);
-        }
-    }
- 
-    return quicksort(left).concat(pivot, quicksort(right));
-}
-
-
- 
 console.log(quicksort(group2));
-
-//Quicksorting group3
-function quicksort(group3)
-{
-    if (group3.length == 0)
-        return [];
- 
-    var left = new Array();
-    var right = new Array();
-    var pivot = group3[0];
- 
-    for (var i = 1; i < group3.length; i++) {
-        if (group3[i] < pivot) {
-           left.push(group3[i]);
-        } else {
-           right.push(group3[i]);
-        }
-    }
- 
-    return quicksort(left).concat(pivot, quicksort(right));
-}
-
 console.log(quicksort(group3));
