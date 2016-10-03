@@ -4,7 +4,7 @@ var group3 = ['sadly', 'roast', 'Loopy', 'burger', 'gavel', 'lure', 'postpone', 
 
 
 // Your code goes here! Hooray!
-function bubblesort(array) {  
+function bubbleSort(array) {  
     var newarray = array.slice();
     var length = newarray.length;
     for (var i = (length - 1); i >= 0; i--) {
@@ -18,9 +18,11 @@ function bubblesort(array) {
     }
     return newarray;
 }
-console.log(bubblesort(group1));
+console.log(bubbleSort(group1));
+console.log(bubbleSort(group2));
+console.log(bubbleSort(group3));
 
-function quicksort(array) {
+function quickSort(array) {
     if (array.length == 0) return [];
   
     var left = [], right = [], pivot = array[0];
@@ -32,8 +34,9 @@ function quicksort(array) {
             right.push(array[i]);
     }
   
-    return quicksort(left).concat(pivot, quicksort(right));
+    return quickSort(left).concat(pivot, quickSort(right));
 }
-
-console.log(quicksort(group3));
+console.log(quickSort(group1));
+console.log(quickSort(group2));
+console.log(quickSort(group3));
 
