@@ -86,4 +86,10 @@ console.log(quickSort(group1));
 console.log(quickSort(group2));
 console.log(quickSort(group3));
 
-//This is my difference between git branches!
+var group1and2 = group1.concat(group2);
+console.log(bubbleSort(group1and2));
+console.log(quickSort(group1and2));
+
+var allGroups = group1.concat(group2, group3);
+console.log(bubbleSort(allGroups));
+console.log(quickSort(allGroups));
