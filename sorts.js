@@ -9,27 +9,14 @@ function bubbleSort(array) {
     var inOrder = false;
     while(inOrder == false) {
         inOrder = true;
-        if (typeof newArray[0] === 'number') {
             for(var i = 0; i < newArray.length; i++) {    
-                if (newArray[i] > newArray[i + 1]) {
-                    var temp = newArray[i];
-                    newArray[i] = newArray[i + 1];
-                    newArray[i + 1] = temp;
-                    inOrder = false;
-                }
+            if (newArray[i] > newArray[i + 1]) {
+                var temp = newArray[i];
+                newArray[i] = newArray[i + 1];
+                newArray[i + 1] = temp;
+                inOrder = false;
             }
         }
-        else {
-            for(var i = 0; i < newArray.length; i++) {
-                if (newArray[i].localeCompare(newArray[i + 1]) > 0) {
-                    var temp = newArray[i];
-                    newArray[i] = newArray[i + 1];
-                    newArray[i + 1] = temp;
-                    inOrder = false;
-                }
-            }
-        }
-        
     }
     return newArray;
 }
@@ -40,45 +27,24 @@ console.log(bubbleSort(group3));
 
 
 function quickSort(array) {
-    if (typeof array[0] == 'number') {
-        var pivot,
-            below = [], 
-            above = [], 
-            i, 
-            l;
-        if (array.length < 2) {
-            return array;
-        }
-        pivot = array.pop();
-        for (i = 0, l = array.length; i < l; i++) {
-            if (array[i] < pivot) {
-                below.push(array[i]);
-            } else {
-                above.push(array[i]);
-            }
-        }
-        return [].concat(quickSort(below), pivot, quickSort(above));
-    } 
-    else {
-        var pivot,
-            below = [], 
-            above = [], 
-            i, 
-            l;
-        if (array.length < 2) {
-            return array;
-        }
-        pivot = array.pop();
-        for (i = 0, l = array.length; i < l; i++) {
-            if (array[i].localeCompare(pivot) < 0) {
-                below.push(array[i]);
-            } else {
-                above.push(array[i]);
-            }
-        }
-        return [].concat(quickSort(below), pivot, quickSort(above));
+    var newArray = array.slice();
+    var pivot,
+        below = [], 
+        above = [], 
+        i, 
+        l;
+    if (newArray.length < 2) {
+        return newArray;
     }
-    
+    pivot = newArray.pop();
+    for (i = 0, l = newArray.length; i < l; i++) {
+        if (newArray[i] < pivot) {
+            below.push(newArray[i]);
+        } else {
+            above.push(newArray[i]);
+        }
+    }
+    return [].concat(quickSort(below), pivot, quickSort(above));
 }
 
 
