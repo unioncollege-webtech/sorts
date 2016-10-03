@@ -39,5 +39,5 @@ console.log(quicksort(group3));
 
 
 //Sources Used: http://stackoverflow.com/questions/9592740/how-can-you-sort-an-array-without-mutating-the-original-array
-//http://codingmiles.com/sorting-algorithms-bubble-sort-using-javascript/
-//http://www.codexpedia.com/javascript/javascript-quick-sort-implementation/
+//http://codingmiles.com/sorting-algorithms-bubble-sort-using-javascript
+//http://www.codexpedia.com/javascript/javascript-quick-sort-implementation
