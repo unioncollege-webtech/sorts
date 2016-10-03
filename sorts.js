@@ -34,6 +34,10 @@ function bubbleSort(array) {
     return newArray;
 }
 
+console.log(bubbleSort(group1));
+console.log(bubbleSort(group2));
+console.log(bubbleSort(group3));
+
 
 function quickSort(array) {
     if (typeof array[0] == 'number') {
