@@ -16,70 +16,47 @@ function bubbleSort(arrIn) {
       //if current is smaller than previous
       if (arrOut[ii] < arrOut[ii-1]) {
         swap(arrOut, ii, ii-1);
-        /**var temp = arrOut[ii];
-        arrOut[ii] = arrOut[ii-1];
-        arrOut[ii-1] = temp;**/
       }
     }
   }
   return arrOut;
 }
 
-//console.log(bubbleSort(group1));
-//console.log(bubbleSort(group2));
-//console.log(bubbleSort(group3));
+console.log(bubbleSort(group1));
+console.log(bubbleSort(group2));
+console.log(bubbleSort(group3));
 
-
-//TODO: fix this broken thing...
-function quickSort(arrIn) {
-  if (arrIn.length <= 25) {
-    console.log('Arrin: ' + arrIn.length);
-    var pivotIndex = Math.floor(arrIn.length/2);
-    var pivot = arrIn[pivotIndex];
-    for (var ii = 0; ii < arrIn.length; ii++) {
-      //console.log(arrIn.length + ' :Len | ii: ' + ii + ' / iiVal: ' + arrIn[ii]);
-      //console.log('p: ' + pivot);
-      //console.log('pi: ' + pivotIndex);
-      if (arrIn[ii] <= pivot) {
-        arrIn.unshift(arrIn[ii]);
-        arrIn.splice(ii, 1);
-        //console.log('l: '+ arrIn);
+function doMoreQuickSort(arr, bot, top) {
+  if (bot < top) {
+    var pivot = Math.floor((top + bot) / 2);
+    var highest = bot;
+    for (var i = bot; i <= top; i++) {
+      if (arr[i] < arr[pivot]) {
+        if (highest == pivot) {
+          pivot = i;
+        }
+        var temp = arr[highest];
+        arr[highest] = arr[i];
+        arr[i] = temp;
+        highest++;
       }
-      else {
-        arrIn.push(arrIn[ii]);
-        arrIn.splice(ii, 1);
-        //console.log('r: ' + arrIn);
-      }
-      //console.log('----------------------------------');
     }
-    console.log('loop');
-    console.log(arrIn);
-    return quickSort(arrIn.splice(0, pivotIndex)).push(quickSort(arrIn.splice(pivotIndex)));
+    var temp2 = arr[pivot];
+    arr[pivot] = arr[highest];
+    arr[highest] = temp2;
+    pivot = highest;
+
+    doMoreQuickSort(arr, bot, pivot - 1);
+    doMoreQuickSort(arr, pivot + 1, top);
   }
 }
 
-/**
 function quickSort(arrIn) {
-  if (arrIn.length <= 1) {
-    return;
-  }
-  var pivot = arrIn[Math.floor(arrIn.length/2)];
-  var left = [];
-  var right = [];
-  for (var ii = 0; ii < arrIn.length; ii++) {
-    if (arrIn[ii] <= pivot) {
-      left.push(arrIn[ii]);
-      console.log('l:'+left);
-    }
-    else {
-      right.push(arrIn[ii]);
-      console.log('r'+right);
-    }
-  }
-  console.log('newloop');
-  return quickSort(left).push(quickSort(right));
+  var sorted = arrIn.slice();
+  doMoreQuickSort(sorted, 0, arrIn.length - 1);
+  return sorted;
 }
-**/
+
 console.log(quickSort(group1));
-//console.log(quickSort(group2));
-//console.log(quickSort(group3));
+console.log(quickSort(group2));
+console.log(quickSort(group3));
