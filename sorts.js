@@ -31,7 +31,7 @@ console.log(bubbleSort(group2));
 console.log(bubbleSort(group3));
 
 
-function quicksort(array)
+function quickSort(array)
 {
     var group = array.slice(0);
     if (group.length == 0)
@@ -49,9 +49,9 @@ function quicksort(array)
         }
     }
  
-    return quicksort(left).concat(pivot, quicksort(right));
+    return quickSort(left).concat(pivot, quickSort(right));
 }
  
-console.log(quicksort(group1));
-console.log(quicksort(group2));
-console.log(quicksort(group3));
+console.log(quickSort(group1));
+console.log(quickSort(group2));
+console.log(quickSort(group3));
